@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create your account</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    ellipse at 8% 8%,
+                    rgba(185, 201, 255, 0.36),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    ellipse at 92% 92%,
+                    rgba(214, 197, 255, 0.32),
+                    transparent 32%
+                ),
+                #f5f7ff;
+        }
+
+        .register-card {
+
+            width: 460px;
+            max-width: 95%;
+
+            padding: 40px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 24px 70px
+                rgba(37, 48, 86, 0.11);
+        }
+
+        .brand {
+
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+            color: #273b9a;
+
+            font-weight: bold;
+        }
+
+        .brand-mark {
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+
+            background: #394fc2;
+
+            color: white;
+        }
+
+        h1 {
+
+            margin-bottom: 8px;
+
+            color: #172033;
+
+            font-size: 30px;
+        }
+
+        .intro {
+
+            margin-bottom: 25px;
+
+            color: #6c7487;
+
+            font-size: 14px;
+        }
+
+        .field {
+
+            margin-bottom: 17px;
+        }
+
+        .field-error {
+            display: block;
+            min-height: 0;
+            margin-top: 6px;
+            color: #c0392b;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        input[aria-invalid="true"] {
+            border-color: #c0392b;
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #30394d;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        input {
+
+            width: 100%;
+
+            height: 46px;
+
+            padding: 0 13px;
+
+            border: 1px solid #dce1ec;
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+        select {
+            width: 100%;
+            height: 46px;
+            padding: 0 13px;
+            border: 1px solid #dce1ec;
+            border-radius: 9px;
+            outline: none;
+            background: white;
+            color: #30394d;
+            font-size: 14px;
+        }
+
+        input:focus {
+
+            border-color: #596bd0;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(89, 107, 208, 0.14);
+        }
+
+        select:focus {
+            border-color: #596bd0;
+            box-shadow: 0 0 0 3px rgba(89, 107, 208, 0.14);
+        }
+
+        [hidden] { display: none !important; }
+
+        .password-hint {
+
+            margin-top: 7px;
+
+            color: #858da0;
+
+            font-size: 12px;
+        }
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin-top: 20px;
+
+            color: #6c7487;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+        .terms input {
+
+            width: 16px;
+            height: 16px;
+        }
+
+        a {
+
+            color: #394fc2;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        button {
+
+            width: 100%;
+
+            height: 48px;
+
+            margin-top: 20px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #394fc2;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+
+            background: #2e42aa;
+        }
+
+        button:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+        }
+
+        .message {
+
+            min-height: 20px;
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .message.success {
+
+            color: #198754;
+        }
+
+        .message.error {
+
+            color: #c0392b;
+        }
+
+        .signin {
+
+            margin-top: 22px;
+
+            text-align: center;
+
+            color: #747c8f;
+
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="register-card">
+
+        <div class="brand">
+
+            <span class="brand-mark">
+                P
+            </span>
+
+            <span>
+                Personalized Learning
+            </span>
+
+        </div>
+
+
+        <h1>
+            Create your account
+        </h1>
+
+
+        <p class="intro">
+            Start building a learning experience
+            that's made for you.
+        </p>
+
+
+        <form id="registerForm" novalidate>
+
+            <div class="field">
+
+                <label for="fullName">
+                    Full name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Your name"
+                    minlength="2"
+                    maxlength="255"
+                    autocomplete="name"
+                    aria-describedby="fullNameError"
+                    required
+                >
+                <small class="field-error" id="fullNameError"></small>
+
+            </div>
+
+            <div class="field">
+                <label for="role">Account type</label>
+                <select id="role" name="role" required aria-describedby="roleError">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <small class="field-error" id="roleError"></small>
+            </div>
+
+            <div class="field" id="adminCodeField" hidden>
+                <label for="adminCode">Admin invite code</label>
+                <input type="password" id="adminCode" name="adminCode" autocomplete="off" aria-describedby="adminCodeError" placeholder="Enter your admin invite code">
+                <small class="password-hint">Admin registration requires an invitation code from the system administrator.</small>
+                <small class="field-error" id="adminCodeError"></small>
+            </div>
+
+
+            <div class="field">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    maxlength="254"
+                    autocomplete="email"
+                    aria-describedby="emailError"
+                    required
+                >
+                <small class="field-error" id="emailError"></small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create a password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    aria-describedby="passwordError"
+                    required
+                >
+
+                <p class="password-hint">
+                    Use at least 8 characters.
+                </p>
+                <small class="field-error" id="passwordError"></small>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="confirmPassword">
+                    Confirm password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Enter your password again"
+                    minlength="8"
+                    autocomplete="new-password"
+                    aria-describedby="confirmPasswordError"
+                    required
+                >
+                <small class="field-error" id="confirmPasswordError"></small>
+
+            </div>
+
+
+            <label class="terms">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required
+                >
+
+                <span>
+
+                    I agree to the
+                    <a href="#">Terms of Service</a>
+                    and
+                    <a href="#">Privacy Policy</a>.
+
+                </span>
+
+            </label>
+            <small class="field-error" id="termsError"></small>
+
+
+            <button
+                type="submit"
+                id="registerButton"
+            >
+                Create account
+            </button>
+
+        </form>
+
+
+        <p
+            id="message"
+            class="message"
+        ></p>
+
+
+        <p class="signin">
+
+            Already have an account?
+
+            <a href="login.html">
+                Sign in
+            </a>
+
+        </p>
+
+    </main>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>

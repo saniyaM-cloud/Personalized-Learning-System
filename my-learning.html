@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My learning | Lumen Learning</title><link rel="stylesheet" href="workspace-pages.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark" aria-hidden="true">&#10035;</span><span>Lumen Learning</span></a>
+        <p class="section-label">Workspace</p>
+        <nav class="nav" aria-label="Workspace">
+            <a href="dashboard.html"><span class="nav-icon">&#8962;</span>Overview</a>
+            <a href="student-profile.html"><span class="nav-icon">&#9673;</span>Student profile</a>
+            <a class="active" href="my-learning.html" aria-current="page"><span class="nav-icon">&#9635;</span>My learning</a>
+            <a href="domains.html"><span class="nav-icon">&#9678;</span>Explore domains</a>
+            <a href="learning-focus.html"><span class="nav-icon">&#10022;</span>Learning focus</a>
+        </nav>
+        <div class="sidebar-bottom"><strong id="sidebarName">Loading account...</strong><span id="sidebarEmail">Please wait</span></div>
+    </aside>
+    <main class="main">
+        <header class="topbar"><div class="crumb">Workspace / <strong>My learning</strong></div><button class="logout" id="workspaceLogout" type="button">Sign out</button></header>
+        <div class="content">
+            <p class="overline">Your courses</p><h1>My learning</h1><p class="intro">Your enrolled subjects, course materials, and quizzes in one place.</p>
+            <section class="panel"><div id="myLearningResults" class="course-grid" aria-live="polite"><p class="message" data-page-message>Loading your enrolled courses...</p></div></section>
+            <footer class="footer">Personalized learning, one step at a time.</footer>
+        </div>
+    </main>
+    <script src="workspace-pages.js"></script><script src="my-learning.js"></script>
+</body>
+</html>
